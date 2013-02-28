@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Rect;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -32,14 +33,18 @@ public class RayLayout extends ViewGroup {
 
 	public RayLayout(Context context) {
 		super(context);
+        Log.d("RayLayout", "RayLayout: ");
 	}
 
 	public RayLayout(Context context, AttributeSet attrs) {
 		super(context, attrs);
-
+        Log.d("RayLayout", "RayLayout attrs: " + attrs);
 		if (attrs != null) {
 			TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ArcLayout, 0, 0);
-			mChildSize = Math.max(a.getDimensionPixelSize(R.styleable.ArcLayout_childSize, 0), 0);
+            Log.d("RayLayout", "a: " + a);
+            mChildSize = Math.max(a.getDimensionPixelSize(R.styleable.ArcLayout_childSize, 0), 0);
+            Log.d("RayLayout", "childSize: " + a.getDimensionPixelSize(R.styleable.ArcLayout_childSize, 0));
+            Log.d("RayLayout", "mChildSize: " + mChildSize);
 			a.recycle();
 
 			a = getContext().obtainStyledAttributes(attrs, R.styleable.RayLayout, 0, 0);

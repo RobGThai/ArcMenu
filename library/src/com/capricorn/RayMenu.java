@@ -47,7 +47,7 @@ public class RayMenu extends RelativeLayout {
 			@Override
 			public boolean onTouch(View v, MotionEvent event) {
 				if (event.getAction() == MotionEvent.ACTION_DOWN) {
-					mHintView.startAnimation(createHintSwitchAnimation(mRayLayout.isExpanded()));
+//					mHintView.startAnimation(createHintSwitchAnimation(mRayLayout.isExpanded()));
 					mRayLayout.switchState(true);
 				}
 
@@ -102,7 +102,7 @@ public class RayMenu extends RelativeLayout {
 				}
 
 				mRayLayout.invalidate();
-				mHintView.startAnimation(createHintSwitchAnimation(true));
+//				mHintView.startAnimation(createHintSwitchAnimation(true));
 
 				if (listener != null) {
 					listener.onClick(viewClicked);
